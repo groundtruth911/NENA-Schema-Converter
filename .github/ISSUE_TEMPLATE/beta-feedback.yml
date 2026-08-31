@@ -1,0 +1,88 @@
+name: Beta tester feedback
+description: Share test results, usability feedback, or a suggestion.
+title: "[Beta feedback]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for testing the Groundtruth911 NENA Schema Converter. GitHub issues are public. Do not attach GIS data or include sensitive information.
+
+  - type: input
+    id: arcgis-version
+    attributes:
+      label: ArcGIS Pro version
+      description: Enter the full version number shown in ArcGIS Pro.
+      placeholder: "Example: 3.x"
+    validations:
+      required: true
+
+  - type: input
+    id: windows-version
+    attributes:
+      label: Windows version
+      placeholder: "Example: Windows 11"
+    validations:
+      required: false
+
+  - type: input
+    id: conversion-path
+    attributes:
+      label: Source and target model versions
+      description: Tell us which conversion path you tested.
+      placeholder: "Source: ... / Target: ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: data-description
+    attributes:
+      label: General description of test data
+      description: Describe the types of layers or tables tested. Do not attach or identify the dataset.
+      placeholder: "Example: Copied address points and road centerlines in a file geodatabase."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: result
+    attributes:
+      label: Overall result
+      options:
+        - Completed and output looked correct
+        - Completed but output needs review
+        - Completed with warnings
+        - Did not complete
+        - I need help deciding
+    validations:
+      required: true
+
+  - type: textarea
+    id: worked-well
+    attributes:
+      label: What worked well?
+      placeholder: Tell us what was clear, useful, or successful.
+    validations:
+      required: false
+
+  - type: textarea
+    id: improvements
+    attributes:
+      label: What could be improved?
+      placeholder: Tell us what was unclear, difficult, or missing.
+    validations:
+      required: false
+
+  - type: textarea
+    id: other-notes
+    attributes:
+      label: Additional notes
+      description: Remove sensitive details from any text, screenshot, or log you share.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: data-safety
+    attributes:
+      label: Data safety check
+      options:
+        - label: I have not attached GIS data or included sensitive information in this issue.
+          required: true
