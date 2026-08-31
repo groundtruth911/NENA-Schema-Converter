@@ -1,6 +1,10 @@
-# Groundtruth911 NENA Schema Converter v0.9.0-rc1
+# Groundtruth 911 NENA Schema Converter v0.9.0-rc1
 
 Public beta release candidate
+
+Published by Kaitlin LLC d/b/a Groundtruth 911.
+
+Packaging correction: public-facing branding and legal ownership were corrected after the initial RC1 upload. Converter code, official templates, and fictional sample data are unchanged.
 
 ## What is included
 

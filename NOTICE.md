@@ -2,7 +2,9 @@
 
 ## Groundtruth 911 materials
 
-The converter code and public documentation created by Groundtruth 911 are covered by `LICENSE.md`.
+Groundtruth 911 is a trade name used by Kaitlin LLC.
+
+The converter code and public documentation are owned by Kaitlin LLC d/b/a Groundtruth 911 and are covered by `LICENSE.md`.
 
 ## Bundled NENA materials
 
@@ -27,4 +29,4 @@ NENA and its GIS Data Model standards are the work of the National Emergency Num
 
 NENA, Esri, ArcGIS, and other names and marks belong to their respective owners. Their use identifies compatibility, standards, or source materials and does not imply affiliation, certification, sponsorship, or endorsement.
 
-The Groundtruth 911 converter code is separate from the bundled NENA materials.
+The converter code owned by Kaitlin LLC d/b/a Groundtruth 911 is separate from the bundled NENA materials.

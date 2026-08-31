@@ -1,6 +1,6 @@
 # Changelog
 
-All notable public changes to the Groundtruth911 NENA Schema Converter are documented here.
+All notable public changes to the Groundtruth 911 NENA Schema Converter are documented here.
 
 ## [0.9.0-rc1] - 2026-08-30
 
@@ -18,6 +18,10 @@ All notable public changes to the Groundtruth911 NENA Schema Converter are docum
 - Human-readable log, machine-readable manifest, and incomplete-output marker.
 - Fictional Cascade v1 and v2 sample geodatabases for public testing.
 - Public beta documentation and structured GitHub feedback forms.
+
+### Changed
+
+- Corrected public-facing branding to “Groundtruth 911” and identified the legal owner as Kaitlin LLC d/b/a Groundtruth 911. Converter code, templates, and fictional sample data are unchanged.
 
 ### Known beta limitations
 

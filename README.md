@@ -1,8 +1,8 @@
-# Groundtruth911 NENA Schema Converter
+# Groundtruth 911 NENA Schema Converter
 
 Public beta: `v0.9.0-rc1`
 
-The Groundtruth911 NENA Schema Converter is a free ArcGIS Pro Python toolbox that creates a new NENA interchange geodatabase while leaving the source geodatabase unchanged.
+The Groundtruth 911 NENA Schema Converter is a free ArcGIS Pro Python toolbox that creates a new NENA interchange geodatabase while leaving the source geodatabase unchanged.
 
 Supported conversions:
 
@@ -90,10 +90,10 @@ Generated logs and manifests use path basenames rather than full local paths, bu
 
 ## License and attribution
 
-Groundtruth 911-created code and documentation are distributed under the limited public-beta terms in [LICENSE.md](LICENSE.md). This is not an open-source license.
+The converter code and documentation are owned by Kaitlin LLC d/b/a Groundtruth 911 and distributed under the limited public-beta terms in [LICENSE.md](LICENSE.md). This is not an open-source license.
 
 The release bundles unmodified NENA GIS Data Model template files under Apache License 2.0. See [NOTICE.md](NOTICE.md) and [NENA-APACHE-2.0-LICENSE.txt](NENA-APACHE-2.0-LICENSE.txt).
 
 NENA and Esri are not affiliated with or endorsing this project.
 
-Groundtruth 911
+Groundtruth 911 is a DBA of Kaitlin LLC.

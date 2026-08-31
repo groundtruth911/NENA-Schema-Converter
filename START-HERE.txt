@@ -1,4 +1,4 @@
-GROUNDTRUTH911 NENA SCHEMA CONVERTER — PUBLIC BETA v0.9.0-rc1
+GROUNDTRUTH 911 NENA SCHEMA CONVERTER — PUBLIC BETA v0.9.0-rc1
 
 1. Fully extract this ZIP into a normal folder.
 2. Open TESTER-GUIDE.md.
@@ -8,3 +8,5 @@ GROUNDTRUTH911 NENA SCHEMA CONVERTER — PUBLIC BETA v0.9.0-rc1
 6. Submit feedback through the GitHub Issues link in FEEDBACK.md.
 
 Use a copy of any operational data. Review logs and manifests before posting them publicly. Do not attach a source geodatabase to a public issue.
+
+Published by Kaitlin LLC d/b/a Groundtruth 911.
