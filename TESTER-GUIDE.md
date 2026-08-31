@@ -1,74 +1,124 @@
-# Beta Tester Guide
+# Public Beta Tester Guide
 
-Thank you for testing the Groundtruth911 NENA Schema Converter public beta.
+Version: `v0.9.0-rc1`
 
-## What you are testing
+Thank you for testing the Groundtruth911 NENA Schema Converter. Start with the included fictional sample. That gives us a comparable result across ArcGIS Pro versions before anyone uses local data.
 
-This beta is intended to help convert NG9-1-1 GIS data between the NENA GIS Data Model versions available in the tool.
+## Before you begin
 
-The goal of testing is to learn whether the converter is easy to use, completes successfully, and produces output that can be reviewed and used as expected.
+You need ArcGIS Pro with ArcPy on Windows. Download the named ZIP from the repository's **Releases** page and fully extract it to a normal folder.
 
-## What you need
+This build is a release candidate:
 
-- A Windows computer with ArcGIS Pro.
-- Permission to use the data selected for testing.
-- A copied test dataset that you can safely replace or delete.
-- The release file `Groundtruth911-NENA-Schema-Converter-v0.9.0-rc1.zip`.
+- Use a copy of any operational data.
+- Write output to a new, empty folder.
+- Read the generated log before relying on an output.
+- Do not send source data unless Groundtruth 911 specifically requests it and your organization authorizes sharing it.
 
-## Download the correct file
+## Test 1: required fictional v2-to-v3 run
 
-1. Open the repository's **Releases** section.
-2. Open release **v0.9.0-rc1**.
-3. Under **Assets**, select `Groundtruth911-NENA-Schema-Converter-v0.9.0-rc1.zip`.
-4. Do not select GitHub's automatic **Source code** ZIP.
-5. Extract the downloaded file to a local folder before opening the toolbox.
+1. In ArcGIS Pro, open the Catalog pane.
+2. Right-click **Toolboxes**, choose **Add Toolbox**, and select `NENA_Schema_Converter.pyt`.
+3. Open **Convert NENA Schema Version**.
+4. Set **Source geodatabase** to:
 
-## Run a test
+   `sample-data\v2\Cascade_v2_TestData.gdb`
 
-1. Make a separate copy of the GIS data you plan to test.
-2. Open ArcGIS Pro.
-3. In the **Catalog** pane, add the toolbox included in the extracted release.
-4. Open the converter.
-5. Select the source and target options that match your test.
-6. Choose your copied input data and a new output location.
-7. Run the tool.
-8. Record any messages shown by ArcGIS Pro.
-9. Review the output before using it in another process.
+5. Set **Conversion** to:
 
-## Suggested review
+   `v2 to v3 flatfile (STA-006.2a-2023 to STA-006.3-2026)`
 
-Check what applies to your test:
+6. Leave **Schema map** blank.
+7. Set **Output folder** to a normal empty folder. Do not select a geodatabase.
+8. Click **Run**.
 
-- Did the tool open and run?
-- Were the instructions and options understandable?
-- Did the expected output layers or tables appear?
-- Were field names, field types, domains, and values handled as expected?
-- Were feature counts and geometry reasonable?
-- Did ArcGIS Pro display warnings or errors?
-- Did anything require a workaround?
+The sample deliberately contains unusual and incomplete values. Warnings are expected.
 
-Conversion is not a substitute for local quality review. Confirm the result against your requirements and applicable standards.
+## Expected files
 
-## Send feedback
+A finished run should create files similar to:
 
-In the repository, open **Issues**, select **New issue**, and choose the form that best matches your result:
+```text
+NG911_Converted_v3_<date>.gdb
+NG911_Converted_v3_<date>_LOG.txt
+NG911_Converted_v3_<date>_MANIFEST.json
+```
 
-- **Beta tester feedback** for a successful test, usability comments, or suggestions.
-- **Bug report** for a failure, error, crash, or unexpected output.
+Same-day reruns may add `_2`, `_3`, and so on.
 
-Useful details include:
+The final status will be `COMPLETE`, `COMPLETE WITH WARNINGS`, or `PARTIAL`. A warning does not automatically mean the test failed. Record the status exactly as written.
 
-- ArcGIS Pro version.
-- Windows version.
-- Source model version.
-- Target model version.
-- General data types tested.
-- Steps to reproduce the result.
-- Exact error text, if any.
-- Whether the issue happens every time.
+If an `_INCOMPLETE.txt` marker remains, stop. Do not rely on the adjacent output geodatabase.
 
-## Protect your data
+## Record the first result
 
-GitHub issues in a public repository can be viewed by anyone. Do not upload GIS datasets, screenshots containing protected information, credentials, contact records, or other sensitive material. Use general descriptions and remove sensitive details from screenshots and logs.
+Make a copy of [TEST-RESULTS.md](TEST-RESULTS.md) and complete the first-run section. At minimum, record:
 
-If the problem cannot be explained safely in a public issue, state that you have additional details available and wait for Ground Truth 911 to provide an appropriate contact method.
+- ArcGIS Pro version
+- Windows version
+- whether the toolbox opened
+- whether the run finished
+- final status from the log
+- approximate run time
+- whether the log and manifest were created
+- any ArcGIS error text
+
+Submit a **Beta test report** or **Bug report** through GitHub Issues. Instructions are in [FEEDBACK.md](FEEDBACK.md).
+
+## Test 2: optional fictional v1-to-v2 run
+
+After Test 1 finishes, you may also run:
+
+- Source: `sample-data\v1\Cascade_v1_TestData.gdb`
+- Conversion: `v1 to v2 (STA-006.1.1-2020 to STA-006.2a-2023)`
+- Schema map: blank
+- Output: a new normal folder
+
+Report this as a separate test result so the two conversion paths are easy to distinguish.
+
+## Test 3: optional local-data run
+
+Only move to local data after completing the fictional sample.
+
+1. Work from a copy of the geodatabase.
+2. Use **Generate Schema Map** if your organization has local layer or field names.
+3. Fill in only mappings whose meaning you know.
+4. Run into a new empty folder.
+5. Review the log and manifest before opening or sharing the output.
+
+No particular set of layers is required. Recognized NENA layers can coexist with unrelated local layers. Unmatched data remains in the untouched source and is reported.
+
+## Schema-map notes
+
+**Generate Schema Map** writes a fill-in file and a reference file of valid NENA names. The converter checks a completed map before conversion and reports stale fields, wrong versions, invalid target names, contradictory mappings, and geometry-incompatible layer mappings.
+
+The converter will not silently decide that a local name such as `CITY_L` means municipality, MSAG community, or something else.
+
+## When a test fails
+
+Do not repeatedly run against production data. Capture:
+
+- the complete ArcGIS geoprocessing error text
+- the `_INCOMPLETE.txt` marker, if present
+- the `_LOG.txt` and `_MANIFEST.json`, if created
+- the exact step that failed
+- whether the fictional sample or local data was used
+
+Then open a **Bug report** issue.
+
+## Privacy checklist
+
+The tool does not upload data. Feedback is different: a GitHub issue is public unless the repository owner changes its visibility.
+
+Before posting files, check for:
+
+- names or contact details
+- internal server, folder, layer, or field names
+- jurisdiction-specific identifiers
+- examples of problematic source values
+- record identifiers or NGUIDs
+- security-sensitive infrastructure details
+
+You may describe a problem without attaching the source geodatabase. If a log or manifest is not safe to post, say that it is available privately and wait for instructions.
+
+Groundtruth 911

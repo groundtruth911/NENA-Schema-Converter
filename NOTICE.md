@@ -1,23 +1,30 @@
-# Notices
+# Notice and Attribution
 
-## Project scope
+## Groundtruth 911 materials
 
-This repository and its releases cover only the public Groundtruth911 NENA Schema Converter beta.
+The converter code and public documentation created by Groundtruth 911 are covered by `LICENSE.md`.
 
-## Independent publication
+## Bundled NENA materials
 
-This project is published by Ground Truth 911. References to NENA standards or model names describe the converter's intended compatibility and do not imply endorsement.
+The release package bundles two official NENA NG9-1-1 GIS Data Model prebuilt Esri File Geodatabase templates from:
 
-NENA, ArcGIS, ArcGIS Pro, Esri, and other names or marks are the property of their respective owners.
+https://github.com/NENA911/NG911GISDataModel
 
-## Beta software
+The NENA repository is licensed under Apache License 2.0. A copy of that license is included as `NENA-APACHE-2.0-LICENSE.txt`.
 
-This release candidate is provided for testing. Users are responsible for reviewing converted output before relying on it. Always test with a copy of source data and retain an unchanged backup.
+Bundled templates:
 
-## Public feedback
+- `NG911_GISDataModelTemplate_v2.0a.gdb.zip`, NENA release v2.0a, commit `6e58e41`, aligned with NENA-STA-006.2a-2023
+- `NG911_GISDataModelTemplate_v3.0.gdb.zip`, NENA release v3.0, commit `30a42bf`, aligned with NENA-STA-006.3-2026, flat-file model
 
-GitHub issues are public. Do not submit datasets, credentials, personal information, protected information, or other sensitive content through an issue.
+The v1-to-v2 mapping also references the published v1.0 source at commit `ce312b5`, aligned with NENA-STA-006.1.1-2020. A v1 template is not bundled.
 
-## Copyright
+The NENA template archives are redistributed unmodified. The converter checks their expected SHA-256 fingerprints before use.
 
-Copyright (c) 2026 Ground Truth 911. All rights reserved. See [LICENSE](LICENSE) for permitted use.
+NENA and its GIS Data Model standards are the work of the National Emergency Number Association and its contributors.
+
+## Names and trademarks
+
+NENA, Esri, ArcGIS, and other names and marks belong to their respective owners. Their use identifies compatibility, standards, or source materials and does not imply affiliation, certification, sponsorship, or endorsement.
+
+The Groundtruth 911 converter code is separate from the bundled NENA materials.

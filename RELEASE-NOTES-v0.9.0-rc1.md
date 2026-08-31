@@ -1,40 +1,57 @@
 # Groundtruth911 NENA Schema Converter v0.9.0-rc1
 
-This is the first public beta release candidate of the Groundtruth911 NENA Schema Converter.
+Public beta release candidate
 
-## Download
+## What is included
 
-Under the GitHub Release **Assets**, download:
+- ArcGIS Pro Python toolbox
+- NENA v1-to-v2 conversion
+- NENA v2-to-v3 flat-file Esri File Geodatabase conversion
+- Schema-map generator for local names
+- Official NENA v2.0a and v3.0 target templates
+- Fictional Cascade sample geodatabases for both conversion paths
+- Tester guide, feedback instructions, result template, license, and notices
 
-`Groundtruth911-NENA-Schema-Converter-v0.9.0-rc1.zip`
+## Start here
 
-Do not download GitHub's automatically generated **Source code** ZIP. It is not the packaged converter release.
+1. Download `Groundtruth911-NENA-Schema-Converter-v0.9.0-rc1.zip` from the assets below.
+2. Fully extract the ZIP.
+3. Follow `TESTER-GUIDE.md`.
+4. Run the included fictional v2-to-v3 sample first.
+5. Submit the result through GitHub Issues.
 
-## Purpose of this release
+## Safety behavior
 
-This release is available so beta testers can:
+The source geodatabase is read-only. The converter creates a fresh output and reports what it moved, changed mechanically, could not move, or deliberately left behind. It refuses ambiguous field meaning and does not invent missing identifiers or values.
 
-- Confirm that the toolbox can be downloaded, extracted, and opened in ArcGIS Pro.
-- Exercise the conversion options provided by the tool.
-- Review the converted GIS output.
-- Report errors, unclear instructions, and usability suggestions.
+## Known limitations
 
-## Before testing
+- Release candidate: use copies of operational data and review all output.
+- ArcGIS Pro with ArcPy is required.
+- ArcGIS Pro version compatibility is still being documented through tester results.
+- The v3 target is the NENA flat-file Esri File Geodatabase model.
+- Operational structures outside the flat-file model are not recreated.
+- A schema conversion does not establish NENA conformance.
 
-- Read [TESTER-GUIDE.md](TESTER-GUIDE.md).
-- Use copied test data and retain an unchanged backup.
-- Choose a new output location.
-- Plan to review the result before using it in another workflow.
+## Feedback requested
 
-## Known beta considerations
+Please report:
 
-- This is pre-release software and may contain defects.
-- Behavior may vary by ArcGIS Pro version, selected conversion path, and input data structure.
-- The converter does not replace local quality review.
-- Features and instructions may change before version 1.0.
+- exact ArcGIS Pro and Windows versions
+- conversion direction
+- final status from the generated log
+- whether `_LOG.txt` and `_MANIFEST.json` were created
+- approximate run time
+- any warnings, errors, incomplete marker, or confusing instructions
 
-## Feedback
+Review logs and manifests before posting them publicly. Do not attach source data to a public issue.
 
-Use the repository's **Issues** tab and choose either **Beta tester feedback** or **Bug report**. Do not attach GIS data or include sensitive information in a public issue.
+## Package integrity
 
-Thank you for helping improve the public beta.
+The SHA-256 checksum for the release ZIP is attached to the GitHub Release as `Groundtruth911-NENA-Schema-Converter-v0.9.0-rc1.zip.sha256.txt`.
+
+## Attribution
+
+The bundled NENA target templates are redistributed unmodified under Apache License 2.0. See `NOTICE.md` and `NENA-APACHE-2.0-LICENSE.txt` in the package.
+
+This project is not endorsed by or affiliated with NENA or Esri.
