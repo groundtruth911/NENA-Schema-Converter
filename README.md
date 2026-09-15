@@ -97,3 +97,7 @@ The release bundles unmodified NENA GIS Data Model template files under Apache L
 NENA and Esri are not affiliated with or endorsing this project.
 
 Groundtruth 911 is a DBA of Kaitlin LLC.
+
+## About this project
+
+[Project background and current status](https://www.kaitlinquinn.com/nena-version-conversion-tool/)
